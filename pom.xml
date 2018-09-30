@@ -5,4 +5,51 @@
   <version>0.1-SNAPSHOT</version>
   <name>vharcq</name>
   <description>Tests</description>
+  
+	<scm>
+        <connection>scm:git:https://github.com/vharcq/vharcq</connection>
+        <developerConnection>scm:svn:https://github.com/vharcq/vharcq</developerConnection>
+        <url>https://github.com/vharcq/vharcq</url>
+    </scm>
+	
+	<build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>3.1.0</version>
+            </extension>
+        </extensions>
+
+        <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.8.0</version>
+              <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <debug>true</debug>
+              </configuration>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+			</plugin>
+        </plugins>
+    </build>
+	
 </project>
